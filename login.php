@@ -1,54 +1,49 @@
-<?php
-include "session.php";
+<?php 
+session_start(); 
+include "db_config.php";
 
+if (isset($_POST['uname']) && isset($_POST['password'])) {
 
-if(isset($_POST['but_submit'])){
+	function validate($data){
+       $data = trim($data);
+	   $data = stripslashes($data);
+	   $data = htmlspecialchars($data);
+	   return $data;
+	}
 
-    $uname = mysqli_real_escape_string($con,$_POST['txt_uname']);
-    $password = mysqli_real_escape_string($con,$_POST['txt_pwd']);
+	$uname = validate($_POST['uname']);
+	$pass = validate($_POST['password']);
 
+	if (empty($uname)) {
+		header("Location: main.php?error=Musisz podać login !");
+	    exit();
+	}else if(empty($pass)){
+        header("Location: main.php?error=Musisz podać hasło !");
+	    exit();
+	}else{
+		$sql = "SELECT * FROM users WHERE user_name='$uname' AND password='$pass'";
 
-    if ($uname != "" && $password != ""){
+		$result = mysqli_query($conn, $sql);
 
-        $sql_query = "select count(*) as cntUser from accounts where username='".$uname."' and password='".$password."'";
-        $result = mysqli_query($con,$sql_query);
-        $row = mysqli_fetch_array($result);
-
-        $count = $row['cntUser'];
-
-        if($count > 0){
-            $_SESSION['uname'] = $uname;
-            header('Location: admin.php');
-        }else{
-            echo "Invalid username and password";
-        }
-
-    }
-
+		if (mysqli_num_rows($result) === 1) {
+			$row = mysqli_fetch_assoc($result);
+            if ($row['user_name'] === $uname && $row['password'] === $pass) {
+            	$_SESSION['user_name'] = $row['user_name'];
+            	$_SESSION['name'] = $row['name'];
+            	$_SESSION['id'] = $row['id'];
+            	header("Location: home.php");
+		        exit();
+            }else{
+				header("Location: main.php?error=Zły login bądź hasło !");
+		        exit();
+			}
+		}else{
+			header("Location: main.php?error=Zły login bądź hasło !");
+	        exit();
+		}
+	}
+	
+}else{
+	header("Location: index.php");
+	exit();
 }
-?>
-<html>
-    <head>
-        <title>Create simple login page with PHP and MySQL</title>
-        <link href="style.css" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        <div class="container">
-            <form method="post" action="">
-                <div id="div_login">
-                    <h1>Login</h1>
-                    <div>
-                        <input type="text" class="textbox" id="txt_uname" name="txt_uname" placeholder="Username" />
-                    </div>
-                    <div>
-                        <input type="password" class="textbox" id="txt_uname" name="txt_pwd" placeholder="Password"/>
-                    </div>
-                    <div>
-                        <input type="submit" value="Submit" name="but_submit" id="but_submit" />
-                    </div>
-                </div>
-            </form>
-        </div>
-    </body>
-</html>
-

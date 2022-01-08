@@ -2,7 +2,6 @@
 		<tr> <th style="width:10%;"> Autor </th> <th>Wiadomość</th> <th style="width:10%;">Data</th> </tr> 
 
 		<?php
-            include "authenticate.php";
 			include "config.php";
 			$sql_statement = "SELECT * FROM messages";
 
