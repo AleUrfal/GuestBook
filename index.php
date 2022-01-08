@@ -11,14 +11,14 @@
 		<h1><b>Witaj w naszej Księdze Gości</b></h1>
 		<br>
 		<h2>Pozostaw po sobie wiadomość</h2>
-		<h1>dasd</h1>
+
 		<form action="sendmsg.php" method="POST">
 			<input type="text" name="name" placeholder="Imię"><br>
 			<input type="text" name="message" placeholder="Wiadomość" rows="5" width="90%"></textarea><br>
 			<button class="postButton">DODAJ</button>
 		</form>
 
-		<hr>
+	
 
 		<br>
 		<br>
@@ -30,9 +30,9 @@
                 <h1>Księga Gości</h1>
        
 
-		<!-- Tabel zostawiam -->
+		<!-- Tabel zostawiam echo "<tr>" . "<th>" . $mysender . "<hr>" . "</th>" . "<th>" . $message . "<hr>" . "</th>"  . "<th>" . $data . "<hr>" . "</th>" . "</tr>";-->
 		<table>
-		<tr> <th style="width:10%;"> Autor </th> <th style="width:30%"> Wiadomość </th> <th style="width:5%;">Data</th> </tr> 
+		<tr> <th style="width:3%;"> Autor </th> <th style="width:10%"> Wiadomość </th> <th style="width:5%;">Data</th> </tr> 
 
 		<?php
 			include "config.php";
@@ -47,9 +47,12 @@
 				$mysender = $row['sender'];
 				$message = $row['message'];
 				$data = $row['data'];
+				
 
-				echo "<tr>" . "<th>" . $mysender . "<hr>" . "</th>" . "<th>" . $message . "<hr>" . "</th>"  . "<th>" . $data . "<hr>" . "</th>" . "</tr>";
-			}
+				
+				echo "<tr>" . "<th>" . $mysender . "</th>" . "<th>" . $message . "</th>"  . "<th>" . $data . "</th>" . "</tr>";
+				
+				}
 			
 		?>
 	</table>

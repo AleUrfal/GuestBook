@@ -31,11 +31,7 @@ input[type=text], select {
       color: white;
 }
 
-table {
-    width: 100%;
-  
-    font-family: Alex Brush;
-}
+
 
 hr {
     display: block;
@@ -49,9 +45,14 @@ hr {
 }
 
 td, th {
-    padding: 12px;
+
     text-align: left;
+    border-bottom: 2px inset;
+    border-bottom-color: lightgray;
+    padding-top: 15px;
+    
    
+ 
 }
 
 
@@ -118,7 +119,7 @@ tr:nth-child(odd) {
 
     .page:after {
         content: "";
-        width: 106%;
+        width: 103.5%;
         height: 30px;
         background: #CCC;
         position: absolute;

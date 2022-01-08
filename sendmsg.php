@@ -5,7 +5,7 @@
 	{
 		$sender = $_POST['name'];
 		$message = $_POST['message'];
-		$data = date('Y-m-d H:i:s');
+		$data = date('Y-m-d H:i');
 
 		if (!empty($sender) == "")
 		{ 
