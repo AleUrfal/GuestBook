@@ -18,7 +18,7 @@
     )";
     
     if (mysqli_query($conn, $sql)) {
-      echo "Table MyGuests created successfully";
+      echo "Table MyGuests created successfully </br>";
     } else {
       //echo "Error creating table: " . mysqli_error($conn);
     }
@@ -26,7 +26,7 @@
     $sql1 = "INSERT INTO users ( id,username,name,password) VALUES ('1','admin','admin','admin')";
         
         if (mysqli_query($conn, $sql1)) {
-          echo "Admin created succesfull";
+          echo "Admin created succesfull</br>";
         } else {
          // echo "Error creating admin: " . mysqli_error($conn);
         }
