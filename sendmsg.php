@@ -1,3 +1,9 @@
+<html>
+	<head>
+	<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="warning">
 <?php
 	include "config.php";
 	
@@ -29,4 +35,8 @@
 		echo "The form is not set.";
 	}
 ?>
-<a id="back-link" href="index.php">Powrót</a>
+</div>
+
+<a id="back-link" href="index.php"><img src="icons/back.png"></a>
+</body>
+</html>

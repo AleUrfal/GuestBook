@@ -128,14 +128,12 @@ tr:nth-child(odd) {
         transform: skewX(-45deg) translate(-11px, 30px)
     }
 
-
-
-
-
-
-
-
-
+#key-icon
+{
+    margin-left:99%;
+    width:25px;
+    height:25px;
+}
 
 
 

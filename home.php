@@ -7,17 +7,19 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>HOME</title>
-	<link rel="stylesheet" type="text/css" href="">
+	<title>Admin Panel</title>
+	<link rel="stylesheet" type="text/css" href="style-admin.css">
 </head>
 <body>
-     <h1>Hello, <?php echo $_SESSION['name']; ?></h1>
-
+	<div id="welcome">
+     <h1 >Witaj, <?php echo $_SESSION['name']; ?></h1>
+	</div>
      <?php 
 	include "config.php";
-	include "messages.php";
+	include "messages_admin.php";
 ?>
-
+<div id="delete-container">
+<a id="delete-text">Wybierz id komentarza który chcesz usunąć </a>
 <form action="sendadmin.php" method="POST">
 <select name="ids">
 
@@ -31,13 +33,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 		echo "<option value=$id>".$id."</option>";
 	}
 ?>
-
-</select>
-	<button>DELETE</button>
+</select></br>
+	<button id="delete-butt">DELETE</button>
 </form>
-
-
-     <a href="logout.php">Logout</a>
+</div>
+<div id="lock">
+	 <a href="logout.php"><img id ="lock-icon" src="icons/lock.png"></a>
+	</div>
 </body>
 </html>
 

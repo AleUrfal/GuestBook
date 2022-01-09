@@ -8,13 +8,17 @@
 </head>
 
 <body>
+		<!--Logowanie administratora -->
+		<a href="login.php"><img id ="key-icon" src="icons/key.png"></a>
+
 		<h1><b>Witaj w naszej Księdze Gości</b></h1>
+
 		<br>
 		<h2>Pozostaw po sobie wiadomość</h2>
 
 		<form action="sendmsg.php" method="POST">
-			<input type="text" name="name" placeholder="Imię"><br>
-			<input type="text" name="message" placeholder="Wiadomość" rows="5" width="90%"></textarea><br>
+			<input type="text" name="name" placeholder="Imię" require><br>
+			<input type="text" name="message" placeholder="Wiadomość" rows="5" width="90%" require></textarea><br>
 			<button class="postButton">DODAJ</button>
 		</form>
 

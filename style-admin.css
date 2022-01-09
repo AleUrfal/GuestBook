@@ -1,0 +1,88 @@
+body {
+    background-color:#f2f8ef;
+    font-family: arial, sans-serif;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+
+#logon
+{
+
+    background-color:rgb(146, 223, 210);
+    width:500px;
+    height:500px;
+    margin-left:35%;
+    margin-top:auto;
+    border: 3px solid rgb(30, 61, 30);
+    padding: 10px;
+
+}
+
+#box{
+    width: 35%;
+    padding: 7px;
+}
+
+#poszlo[type=submit]{
+    padding: 7px;
+    width: 100px;
+    background-color: lightseagreen;
+    border: 0px;
+    color: white;
+}
+
+#welcome
+{
+background-color: white;
+display:flex;
+margin-left:45%;
+}
+table
+{
+    width: 100%;
+    border-color:rgb(54, 54, 54);
+    border-style:solid;
+}
+td, th {
+    text-align: center;
+    padding-top: 15px;
+    
+}
+
+tr:nth-child(even) {
+    background-color: #ace0e2;
+}
+
+tr:nth-child(odd) {
+    background-color: #c2c8c9;
+}
+#delete-container
+{
+    margin-top:1%;
+    margin-left:45%;
+    width:200px;
+    height:100px;
+    background-color:rgb(191, 231, 236);
+}
+#delete-text
+{
+    margin-bottom:2%;
+    text-align: center;
+    font-weight:bold;
+}
+#delete-butt
+{
+    margin-top:2%;
+    padding: 7px;
+    width: 100px;
+    background-color: lightseagreen;
+    border: 0px;
+    color: white  
+}
+#lock-icon
+{
+    margin-left:99%;
+    width:35px;
+    height:35px;
+}

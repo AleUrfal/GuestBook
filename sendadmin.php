@@ -7,7 +7,7 @@
 		$sql_statement = "DELETE FROM messages WHERE id = $selection_id";
 		$result = mysqli_query($db, $sql_statement);
 
-		header ("Location: admin.php");
+		header ("Location: home.php");
 	}
 	else
 	{

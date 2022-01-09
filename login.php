@@ -44,6 +44,6 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 	}
 	
 }else{
-	header("Location: index.php");
+	header("Location: main.php");
 	exit();
 }
