@@ -3,6 +3,9 @@
 <head>
 	<title>Admin Login System</title>
 	<link rel="stylesheet" type="text/css" href="style-admin.css">
+	<?php
+	include "addadmin.php";
+	?>
 </head>
 <body>
 	<div id="logon">
