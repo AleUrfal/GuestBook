@@ -33,6 +33,14 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 		echo "<option value=$id>".$id."</option>";
 	}
 ?>
+<!--
+<div id="edit-container">
+<a id="edit-text">Wybierz id komentarza który chcesz edytować </a>
+<form action="" method="POST">
+<select name="eds">
+/*
+
+-->
 </select></br>
 	<button id="delete-butt">DELETE</button>
 </form>
