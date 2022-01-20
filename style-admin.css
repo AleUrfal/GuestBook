@@ -80,6 +80,31 @@ tr:nth-child(odd) {
     border: 0px;
     color: white  
 }
+
+#edit-container
+{
+    margin-top:1%;
+    margin-left:0%;
+    width:200px;
+    height:100px;
+    background-color:rgb(191, 231, 236);
+}
+#edit-text
+{
+    margin-bottom:2%;
+    text-align: center;
+    font-weight:bold;
+}
+#edit-butt
+{
+    margin-top:2%;
+    padding: 7px;
+    width: 100px;
+    background-color: lightseagreen;
+    border: 0px;
+    color: white  
+}
+
 #lock-icon
 {
     margin-left:99%;
